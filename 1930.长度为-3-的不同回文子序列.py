@@ -2,8 +2,8 @@
 # @lc app=leetcode.cn id=1930 lang=python3
 #
 # [1930] 长度为 3 的不同回文子序列
-#
 
+#遍历字符串用字典存储不同字符第一次和最后一次出现位置，记为i, j，然后用集合判断s(i, j)不同字符数目
 # @lc code=start
 class Solution:
     def countPalindromicSubsequence(self, s: str) -> int:

@@ -43,5 +43,7 @@ class Solution:
                 return len(word1[i:])
             return 1 + min(dp(i + 1, j), dp(i + 1, j + 1), dp(i, j + 1)) # delete, replace, insert
         return dp(0, 0)
+
+#同理，也可以通过自底而上的方法计算，之前由于传入是word[i]不好用嵌套列表分析，但是传入i就好用了，确定base case， 代码略
 # @lc code=end
 

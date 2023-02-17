@@ -50,6 +50,8 @@ class Solution:
         dp = [[0] * n for _ in range(m)]
         dp[m - 1][n - 1] = 1 -(dungeon[m - 1][n - 1]) if (dungeon[m - 1][n - 1]) < 0 else 1
         
+        #可以使用虚拟头结点，虚拟边界类似方法统一，外边界填充题目不可取得的大值。
+        #dp = [[1e5] * (n + 1) for _ in range(m + 1)]
         for i in range(m - 2, -1, -1):
             dp[i][n - 1] = dp[i + 1][n - 1] - dungeon[i][n - 1]
             if dp[i][n - 1] <= 0:

@@ -49,6 +49,7 @@
 
 # bfs 主要怎么进队列和进队列的参数 
 from collections import deque
+from typing import List
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         res, onpath = [], []
@@ -74,3 +75,13 @@ class Solution:
         
 # @lc code=end
 
+a = [1]
+print(id(a))
+a.append(1)
+print(id(a))
+a.pop()
+print(id(a))
+print(id(a[:]))
+b = a + []
+print(id(b))
+print(id(a + []))

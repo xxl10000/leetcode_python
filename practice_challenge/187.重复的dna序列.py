@@ -23,7 +23,7 @@
 #                 res.append(sub)
 #         return res
 
-# 字符串哈希化存入字典, ? 效率低下， 运行时间战胜 5% ？
+# 字符串哈希化存入字典,  提交运行效率低下， 运行时间战胜 5% ？
 # from typing import List
 # from collections import Counter
 # class Solution:
@@ -63,7 +63,10 @@
                  
             
 #         return res
-        
+   
+
+# 将法二的字典变成集合存储试试，提交运行时间也很长
+     
 # from typing import List
 # from collections import Counter
 # class Solution:
@@ -102,26 +105,19 @@
 #                 left += 1                         
 #         return list(res)
 
-# from collections import defaultdict
-# class Solution:
-#     # @param s, a string
-#     # @return a list of strings
-#     def findRepeatedDnaSequences(self, s):
-#         sequences = defaultdict(int)
-#         for i in range(len(s)):
-#             sequences[s[i:i + 10]] += 1
-            
-#         return [key for key, value in sequences.items() if value > 1]
-     
+
+# 使用简洁的python代码
+from collections import defaultdict
 class Solution:
     # @param s, a string
     # @return a list of strings
     def findRepeatedDnaSequences(self, s):
-        sequences = collections.defaultdict(int) #set '0' as the default value for non-existing keys
+        sequences = defaultdict(int)
         for i in range(len(s)):
-            sequences[s[i:i+10]] += 1#add 1 to the count
-        return [key for key, value in sequences.iteritems() if value > 1] #extract the relevant keys
-   
+            sequences[s[i:i + 10]] += 1    
+        return [key for key, value in sequences.items() if value > 1]
+     
+
 # @lc code=end
 # obj = Solution()
 # print(obj.findRepeatedDnaSequences('AAAAAAAAAAAAA'))

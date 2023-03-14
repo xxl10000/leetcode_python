@@ -1,3 +1,13 @@
+'''
+给定一个字符串s，找到s中最长的回文子串的长度。
+示例1：
+输入：s = "babad"
+输出：3
+示例2：
+输入：s = "cbbd"
+输出：2
+'''
+
 class Solution:
     def Length(self, s):
         def getLength(pos1, pos2):

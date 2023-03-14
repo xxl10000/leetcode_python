@@ -15,8 +15,8 @@ class Solution:
         X = 1337
         n = a % X
         number = 0
-        # for v in b:
-        #     number = number * 10 + v
+        for v in b:
+            number = number * 10 + v
             
         def getNumber(a, b, res = 1):
             if b == 1:
